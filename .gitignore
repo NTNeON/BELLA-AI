@@ -51,5 +51,6 @@ __pycache__/
 *.pyc
 
 # AI Model cache (keep models but ignore temp files)
-models/**/*.temp
-models/**/*.cache
+models/
+*.onnx
+*.bin

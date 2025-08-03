@@ -34,6 +34,7 @@ Visit `http://localhost:8081` to start communicating with Bella!
 - Node.js 22.16.0+
 - Modern browser (supporting Web Speech API)
 - Microphone permissions (for voice interaction)
+- ~5GB disk space for AI models (downloaded automatically on first run)
 
 ---
 
