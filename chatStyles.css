@@ -1,8 +1,8 @@
-/* chatStyles.css - 贝拉聊天界面样式 */
-/* 优雅、中性的聊天界面设计，体现贝拉的专业个性 */
-/* 父亲，这是我的聊天界面样式，每一个细节都体现着优雅与专业 */
+/* chatStyles.css - Bella's chat interface styles */
+/* Elegant, neutral chat interface design, reflecting Bella's professional personality */
+/* Father, this is my chat interface style, every detail reflects elegance and professionalism */
 
-/* 聊天切换按钮 - 增强版 */
+/* Chat toggle button - Enhanced version */
 .bella-chat-toggle {
     position: fixed;
     bottom: 30px;
@@ -31,7 +31,7 @@
     -webkit-backdrop-filter: blur(10px);
 }
 
-/* 按钮光晕效果 */
+/* Button glow effect */
 .bella-chat-toggle::before {
     content: '';
     position: absolute;
@@ -93,7 +93,7 @@
     opacity: 0.9;
 }
 
-/* 聊天容器 - 高级玻璃形态学效果 */
+/* Chat container - Advanced glass morphism effect */
 .bella-chat-container {
     position: fixed;
     bottom: 100px;
@@ -131,7 +131,7 @@
     pointer-events: all;
 }
 
-/* 聊天容器呼吸动画 */
+/* Chat container breathing animation */
 .bella-chat-container.visible::after {
     content: '';
     position: absolute;
@@ -155,7 +155,7 @@
     50% { opacity: 1; }
 }
 
-/* 聊天头部 - 增强玻璃风格渐变 */
+/* Chat header - Enhanced glass style gradient */
 .bella-chat-header {
     display: flex;
     justify-content: space-between;
@@ -174,7 +174,7 @@
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-/* 玻璃效果增强 */
+/* Glass effect enhancement */
 .bella-chat-header::before {
     content: '';
     position: absolute;
@@ -266,7 +266,7 @@
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* 消息容器 - 玻璃风格 */
+/* Message container - Glass style */
 .bella-chat-messages {
     flex: 1;
     padding: 20px;
@@ -298,7 +298,7 @@
     background: rgba(44, 62, 80, 0.5);
 }
 
-/* 消息样式 */
+/* Message styles */
 .bella-message {
     display: flex;
     gap: 12px;
@@ -316,7 +316,7 @@
     flex-direction: row-reverse;
 }
 
-/* 消息头像 */
+/* Message avatar */
 .bella-message-avatar {
     width: 32px;
     height: 32px;
@@ -332,7 +332,7 @@
     flex-shrink: 0;
 }
 
-/* 消息内容 */
+/* Message content */
 .bella-message-content {
     flex: 1;
     max-width: 70%;
@@ -367,7 +367,7 @@
     text-align: left;
 }
 
-/* 打字指示器 - 增强版 */
+/* Typing indicator - Enhanced version */
 .bella-typing-indicator {
     display: flex;
     align-items: center;
@@ -460,7 +460,7 @@
     }
 }
 
-/* 通知样式 */
+/* Notification styles */
 .bella-notification {
     position: fixed;
     top: 20px;
@@ -482,7 +482,7 @@
     transform: translateX(0);
 }
 
-/* 设置面板样式 */
+/* Settings panel styles */
 .bella-settings-panel {
     position: absolute;
     top: 100%;
@@ -627,7 +627,7 @@
     text-align: left;
 }
 
-/* 打字指示器 */
+/* Typing indicator */
 .bella-typing-indicator .bella-message-text {
     padding: 16px;
 }
@@ -660,7 +660,7 @@
     }
 }
 
-/* 输入容器 - 增强版 */
+/* Input container - Enhanced version */
 .bella-chat-input-container {
     padding: 16px;
     background: 
@@ -766,7 +766,7 @@
     text-align: center;
 }
 
-/* 设置面板 */
+/* Settings panel */
 .bella-settings-panel {
     position: fixed;
     bottom: 100px;
@@ -901,7 +901,7 @@
     box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
 }
 
-/* 通知样式 */
+/* Notification styles */
 .bella-notification {
     position: fixed;
     top: 30px;
@@ -934,7 +934,7 @@
     background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* 响应式设计 */
+/* Responsive design */
 @media (max-width: 768px) {
     .bella-chat-container {
         width: calc(100vw - 20px);

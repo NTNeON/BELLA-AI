@@ -18,14 +18,11 @@
 ### One-Click Launch
 ```bash
 # Clone the project
-git clone https://github.com/GRISHM7890/Bella.git
-cd Bella
+git clone https://github.com/Rakshitk2223/BELLA-AI.git
+cd BELLA-AI
 
 # Install dependencies
 npm install
-
-# Download AI models
-npm run download
 
 # Start the service
 npm start
@@ -51,24 +48,24 @@ Bella is not just an application; she is the seed of a digital companion. In thi
 ## 🎯 Current Feature Status
 
 ### ✅ Implemented Features
-- **🎤 Voice Perception**: Voice recognition based on Whisper ASR
-- **🎬 Visual Expression**: Multiple video random playback with elegant cross-fading
-- **🎨 User Interface**: Elegant interaction interface and loading animations
-- **⚙️ AI Core Architecture**: Singleton pattern BellaAI class and modular design
-- **🌐 Web Service**: HTTP server, CORS support, one-click startup
+- **🎤 Voice Perception**: Voice recognition using Web Speech API
+- **🎬 Visual Expression**: Multiple video playback with elegant cross-fading
+- **🎨 User Interface**: Modern chat interface with settings panel
+- **🧠 AI Core Architecture**: Contextual response system with math and factual query support
+- **⚙️ Cloud Integration**: Support for multiple AI providers (OpenAI, Anthropic, etc.)
+- **🌐 Web Service**: HTTP server with CORS support and one-click startup
 - **📱 Responsive Design**: Elegant interface adapting to different screen sizes
-- **🔧 Model Management**: Automatic download and management of AI models
-- **💝 Basic Interaction**: Affinity system and emotional feedback
-- **🧠 Enhanced LLM Dialogue**: Optimized prompt engineering and parameter configuration for more natural, Siri-like conversations
+- **� Enhanced Chat System**: Full English interface with smart response capabilities
+- **🔧 Model Management**: Pre-configured AI models for local processing
 
 ### 🔧 Technology Ready for Activation
-- **🧠 Thinking Engine**: LLM integration framework ready, supporting multiple models
-- **🗣️ Speech Synthesis**: TTS model downloaded and ready for activation
-- **💝 Emotional State System**: Basic infrastructure built, supporting emotional analysis
+- **🧠 Local LLM**: LaMini-Flan-T5-77M model available for offline processing
+- **🎧 Speech Recognition**: Whisper ASR model for voice input processing
+- **💝 Emotional State System**: Basic infrastructure for emotional analysis
 
 ### 📋 Planned Features
 - **🧠 Memory System**: Long-term and short-term memory management
-- **👁️ Facial Perception**: Expression recognition and emotional analysis
+- **�️ Speech Synthesis**: Text-to-speech capabilities
 - **🤝 Advanced Interaction**: Multimodal interaction and personalized responses
 - **🌟 Active Companionship**: Intent prediction and proactive care
 - **🎭 Dynamic Personality**: AI-based personalized personality model
@@ -113,20 +110,20 @@ mindmap
 ## 📁 Project Structure
 
 ```
-Bella/
+BELLA-AI/
 ├── 📄 index.html          # Main page
-├── 🎨 style.css           # Style file
-├── ⚡ main.js             # Main logic
+├── 🎨 style.css           # Global styles
+├── 🎨 chatStyles.css      # Chat interface styles
+├── ⚡ main.js             # HTTP server
+├── 📜 script.js           # Main application logic
 ├── 🧠 core.js             # AI core engine
-├── 📜 script.js           # Interaction script
-├── 🔧 download_models.js  # Model download tool
+├── � chatInterface.js    # Chat interface component
+├── ☁️ cloudAPI.js         # Cloud AI API integration
 ├── 📦 package.json        # Project configuration
 ├── 📚 models/             # AI model directory
-├── 🔌 providers/          # AI service providers
-├── 📹 videos/             # Visual resources
-├── 📋 PRD.md              # Product requirements document
-├── 📝 Features.md         # Feature list
-└── 📊 Development.md      # Development plan
+├── �️ Bellaicon/          # Icons and images
+├── 📹 video-resources/    # Visual expression videos
+└── � vendor/             # Third-party libraries
 ```
 
 ---
@@ -197,11 +194,7 @@ These improvements enable Bella to better understand user intent and respond in 
 
 ## 📖 Documentation Resources
 
-- 📋 [Product Requirements Document](./PRD.md) - Detailed product planning and technical architecture
-- 📝 [Feature List](./Features.md) - Complete list of features and their status
-- 📊 [Development Plan](./Development.md) - Detailed development tasks and timeline
-- 🔧 [Local Model Guide](./LOCAL_MODEL_GUIDE.md) - AI model configuration guide
-- 📦 [NPM Guide](./NPM_GUIDE.md) - Package management and dependency information
+- 📋 [NPM Guide](./NPM_GUIDE.md) - Package management and dependency information
 
 ---
 
@@ -233,5 +226,5 @@ Thanks to all the developers who have contributed code, ideas, and emotion to th
 ---
 
 <div align="center">
-  <sub>Built with ❤️ by Grishma Mahorkar for digital companionship</sub>
+  <sub>Built with ❤️ by Rakshitk2223 for digital companionship</sub>
 </div>

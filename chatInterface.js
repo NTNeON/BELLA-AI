@@ -1,11 +1,11 @@
-// chatInterface.js - 贝拉的聊天界面组件
-// 这个模块负责创建和管理优雅的聊天界面，体现贝拉的温暖个性
+// chatInterface.js - Bella's chat interface component
+// This module is responsible for creating and managing elegant chat interface, reflecting Bella's warm personality
 
 class ChatInterface {
     constructor() {
         this.isVisible = false;
         this.messages = [];
-        this.maxMessages = 50; // 最多显示50条消息
+        this.maxMessages = 50; // Display up to 50 messages
         this.chatContainer = null;
         this.messageContainer = null;
         this.inputContainer = null;
@@ -18,7 +18,7 @@ class ChatInterface {
         this.init();
     }
 
-    // 初始化聊天界面
+    // Initialize chat interface
     init() {
         this.createChatContainer();
         this.createToggleButton();
@@ -27,9 +27,9 @@ class ChatInterface {
         this.addWelcomeMessage();
     }
 
-    // 创建聊天容器
+    // Create chat container
     createChatContainer() {
-        // 主聊天容器
+        // Main chat container
         this.chatContainer = document.createElement('div');
         this.chatContainer.className = 'bella-chat-container';
         this.chatContainer.innerHTML = `
@@ -37,15 +37,15 @@ class ChatInterface {
                 <div class="bella-chat-title">
                     <div class="bella-avatar">💝</div>
                     <div class="bella-title-text">
-                        <h3>贝拉</h3>
-                        <span class="bella-status">在线</span>
+                        <h3>Bella</h3>
+                        <span class="bella-status">Online</span>
                     </div>
                 </div>
                 <div class="bella-chat-controls">
-                    <button class="bella-settings-btn" title="设置">
+                    <button class="bella-settings-btn" title="Settings">
                         <i class="fas fa-cog"></i>
                     </button>
-                    <button class="bella-minimize-btn" title="最小化">
+                    <button class="bella-minimize-btn" title="Minimize">
                         <i class="fas fa-minus"></i>
                     </button>
                 </div>
@@ -53,18 +53,18 @@ class ChatInterface {
             <div class="bella-chat-messages"></div>
             <div class="bella-chat-input-container">
                 <div class="bella-input-wrapper">
-                    <input type="text" class="bella-message-input" placeholder="和贝拉聊聊天..." maxlength="500">
-                    <button class="bella-send-btn" title="发送">
+                    <input type="text" class="bella-message-input" placeholder="Chat with Bella..." maxlength="500">
+                    <button class="bella-send-btn" title="Send">
                         <i class="fas fa-paper-plane"></i>
                     </button>
                 </div>
                 <div class="bella-input-hint">
-                    按 Enter 发送，Shift + Enter 换行
+                    Press Enter to send, Shift + Enter for new line
                 </div>
             </div>
         `;
 
-        // 获取关键元素引用
+        // Get key element references
         this.messageContainer = this.chatContainer.querySelector('.bella-chat-messages');
         this.inputContainer = this.chatContainer.querySelector('.bella-chat-input-container');
         this.messageInput = this.chatContainer.querySelector('.bella-message-input');
@@ -73,7 +73,7 @@ class ChatInterface {
         document.body.appendChild(this.chatContainer);
     }
 
-    // 创建切换按钮
+    // Create toggle button
     createToggleButton() {
         this.toggleButton = document.createElement('button');
         this.toggleButton.className = 'bella-chat-toggle';
@@ -81,50 +81,51 @@ class ChatInterface {
             <div class="bella-toggle-icon">
                 <i class="fas fa-comments"></i>
             </div>
-            <div class="bella-toggle-text">与贝拉聊天</div>
+            <div class="bella-toggle-text">Chat with Bella</div>
         `;
-        this.toggleButton.title = '打开聊天窗口';
+        this.toggleButton.title = 'Open chat window';
         
         document.body.appendChild(this.toggleButton);
     }
 
-    // 创建设置面板
+    // Create settings panel
     createSettingsPanel() {
         this.settingsPanel = document.createElement('div');
         this.settingsPanel.className = 'bella-settings-panel';
         this.settingsPanel.innerHTML = `
             <div class="bella-settings-header">
-                <h4>聊天设置</h4>
+                <h4>Chat Settings</h4>
                 <button class="bella-settings-close">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <div class="bella-settings-content">
                 <div class="bella-setting-group">
-                    <label>AI服务提供商</label>
+                    <label>AI Service Provider</label>
                     <select class="bella-provider-select">
-                        <option value="local">本地模型</option>
+                        <option value="contextual">Smart Responses (Recommended)</option>
+                        <option value="local">Local Model (Experimental)</option>
                         <option value="openai">OpenAI GPT</option>
-                        <option value="qwen">通义千问</option>
-                        <option value="ernie">文心一言</option>
-                        <option value="glm">智谱AI</option>
+                        <option value="qwen">Qwen</option>
+                        <option value="ernie">ERNIE Bot</option>
+                        <option value="glm">GLM AI</option>
                     </select>
                 </div>
                 <div class="bella-setting-group bella-api-key-group" style="display: none;">
-                    <label>API密钥</label>
-                    <input type="password" class="bella-api-key-input" placeholder="请输入API密钥">
-                    <button class="bella-api-key-save">保存</button>
+                    <label>API Key</label>
+                    <input type="password" class="bella-api-key-input" placeholder="Enter API Key">
+                    <button class="bella-api-key-save">Save</button>
                 </div>
                 <div class="bella-setting-group">
-                    <label>聊天模式</label>
+                    <label>Chat Mode</label>
                     <select class="bella-mode-select">
-                        <option value="casual">轻松聊天</option>
-                        <option value="assistant">智能助手</option>
-                        <option value="creative">创意伙伴</option>
+                        <option value="casual">Casual Chat</option>
+                        <option value="assistant">Smart Assistant</option>
+                        <option value="creative">Creative Partner</option>
                     </select>
                 </div>
                 <div class="bella-setting-group">
-                    <button class="bella-clear-history">清除聊天记录</button>
+                    <button class="bella-clear-history">Clear Chat History</button>
                 </div>
             </div>
         `;
@@ -132,29 +133,29 @@ class ChatInterface {
         document.body.appendChild(this.settingsPanel);
     }
 
-    // 绑定事件
+    // Bind events
     bindEvents() {
-        // 切换聊天窗口
+        // Toggle chat window
         this.toggleButton.addEventListener('click', () => {
             this.toggle();
         });
 
-        // 最小化按钮
+        // Minimize button
         this.chatContainer.querySelector('.bella-minimize-btn').addEventListener('click', () => {
             this.hide();
         });
 
-        // 设置按钮
+        // Settings button
         this.chatContainer.querySelector('.bella-settings-btn').addEventListener('click', () => {
             this.toggleSettings();
         });
 
-        // 发送消息
+        // Send message
         this.sendButton.addEventListener('click', () => {
             this.sendMessage();
         });
 
-        // 输入框事件
+        // Input field events
         this.messageInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -162,50 +163,53 @@ class ChatInterface {
             }
         });
 
-        // 输入框自动调整高度
+        // Auto adjust input height
         this.messageInput.addEventListener('input', () => {
             this.adjustInputHeight();
         });
 
-        // 设置面板事件
+        // Settings panel events
         this.bindSettingsEvents();
     }
 
-    // 绑定设置面板事件
+    // Bind settings panel events
     bindSettingsEvents() {
-        // 关闭设置面板
+        // Close settings panel
         this.settingsPanel.querySelector('.bella-settings-close').addEventListener('click', () => {
             this.hideSettings();
         });
 
-        // 提供商选择
+        // Provider selection
         const providerSelect = this.settingsPanel.querySelector('.bella-provider-select');
         const apiKeyGroup = this.settingsPanel.querySelector('.bella-api-key-group');
         
         providerSelect.addEventListener('change', (e) => {
             const provider = e.target.value;
-            if (provider === 'local') {
+            if (provider === 'contextual') {
+                // Use smart contextual responses (default)
+                apiKeyGroup.style.display = 'none';
+            } else if (provider === 'local') {
                 apiKeyGroup.style.display = 'none';
             } else {
                 apiKeyGroup.style.display = 'block';
             }
             
-            // 触发提供商切换事件
+            // Trigger provider change event
             this.onProviderChange?.(provider);
         });
 
-        // API密钥保存
+        // API key save
         this.settingsPanel.querySelector('.bella-api-key-save').addEventListener('click', () => {
             const provider = providerSelect.value;
             const apiKey = this.settingsPanel.querySelector('.bella-api-key-input').value;
             
             if (apiKey.trim()) {
                 this.onAPIKeySave?.(provider, apiKey.trim());
-                this.showNotification('API密钥已保存', 'success');
+                this.showNotification('API key saved', 'success');
             }
         });
 
-        // 清除聊天记录
+        // Clear chat history
         this.settingsPanel.querySelector('.bella-clear-history').addEventListener('click', () => {
             this.clearMessages();
             this.onClearHistory?.();
@@ -213,15 +217,15 @@ class ChatInterface {
         });
     }
 
-    // 添加欢迎消息
+    // Add welcome message
     addWelcomeMessage() {
-        this.addMessage('assistant', '你好！我是贝拉，你的AI伙伴。很高兴见到你！有什么想聊的吗？', true);
+        this.addMessage('assistant', 'Hello! I\'m Bella, your AI companion. Nice to meet you! What would you like to chat about?', true);
     }
 
-    // 切换聊天窗口显示/隐藏
+    // Toggle chat window display/hide
     toggle() {
-        console.log('ChatInterface.toggle() 被调用');
-        console.log('切换前 isVisible:', this.isVisible);
+        console.log('ChatInterface.toggle() called');
+        console.log('Before toggle isVisible:', this.isVisible);
         
         if (this.isVisible) {
             this.hide();
@@ -229,29 +233,29 @@ class ChatInterface {
             this.show();
         }
         
-        console.log('切换后 isVisible:', this.isVisible);
+        console.log('After toggle isVisible:', this.isVisible);
     }
 
-    // 显示聊天窗口
+    // Show chat window
     show() {
-        console.log('ChatInterface.show() 被调用');
-        console.log('显示前 isVisible:', this.isVisible);
-        console.log('显示前 chatContainer.className:', this.chatContainer.className);
+        console.log('ChatInterface.show() called');
+        console.log('Before show isVisible:', this.isVisible);
+        console.log('Before show chatContainer.className:', this.chatContainer.className);
         
         this.isVisible = true;
         this.chatContainer.classList.add('visible');
         
-        console.log('显示后 isVisible:', this.isVisible);
-        console.log('显示后 chatContainer.className:', this.chatContainer.className);
-        console.log('chatContainer 计算样式 opacity:', window.getComputedStyle(this.chatContainer).opacity);
-        console.log('chatContainer 计算样式 transform:', window.getComputedStyle(this.chatContainer).transform);
+        console.log('After show isVisible:', this.isVisible);
+        console.log('After show chatContainer.className:', this.chatContainer.className);
+        console.log('chatContainer computed style opacity:', window.getComputedStyle(this.chatContainer).opacity);
+        console.log('chatContainer computed style transform:', window.getComputedStyle(this.chatContainer).transform);
         
         this.toggleButton.classList.add('active');
         this.messageInput.focus();
         this.scrollToBottom();
     }
 
-    // 隐藏聊天窗口
+    // Hide chat window
     hide() {
         this.isVisible = false;
         this.chatContainer.classList.remove('visible');
@@ -259,7 +263,7 @@ class ChatInterface {
         this.hideSettings();
     }
 
-    // 切换设置面板
+    // Toggle settings panel
     toggleSettings() {
         if (this.isSettingsVisible) {
             this.hideSettings();
@@ -268,35 +272,35 @@ class ChatInterface {
         }
     }
 
-    // 显示设置面板
+    // Show settings panel
     showSettings() {
         this.isSettingsVisible = true;
         this.settingsPanel.classList.add('visible');
     }
 
-    // 隐藏设置面板
+    // Hide settings panel
     hideSettings() {
         this.isSettingsVisible = false;
         this.settingsPanel.classList.remove('visible');
     }
 
-    // 发送消息
+    // Send message
     sendMessage() {
         const text = this.messageInput.value.trim();
         if (!text) return;
 
-        // 添加用户消息
+        // Add user message
         this.addMessage('user', text);
         
-        // 清空输入框
+        // Clear input field
         this.messageInput.value = '';
         this.adjustInputHeight();
         
-        // 触发消息发送事件
+        // Trigger message send event
         this.onMessageSend?.(text);
     }
 
-    // 添加消息到聊天界面
+    // Add message to chat interface
     addMessage(role, content, isWelcome = false) {
         const messageElement = document.createElement('div');
         messageElement.className = `bella-message bella-message-${role}`;
@@ -305,7 +309,7 @@ class ChatInterface {
             messageElement.classList.add('bella-welcome-message');
         }
 
-        const timestamp = new Date().toLocaleTimeString('zh-CN', {
+        const timestamp = new Date().toLocaleTimeString('en-US', {
             hour: '2-digit',
             minute: '2-digit'
         });
@@ -323,7 +327,7 @@ class ChatInterface {
         this.messageContainer.appendChild(messageElement);
         this.messages.push({ role, content, timestamp: Date.now() });
 
-        // 限制消息数量
+        // Limit message count
         if (this.messages.length > this.maxMessages) {
             const oldMessage = this.messageContainer.firstChild;
             if (oldMessage) {
@@ -332,25 +336,25 @@ class ChatInterface {
             this.messages.shift();
         }
 
-        // 滚动到底部
+        // Scroll to bottom
         this.scrollToBottom();
 
-        // 添加动画效果
+        // Add animation effect
         setTimeout(() => {
             messageElement.classList.add('bella-message-appear');
         }, 10);
     }
 
-    // 格式化消息内容
+    // Format message content
     formatMessage(content) {
-        // 简单的文本格式化，支持换行
+        // Simple text formatting, support line breaks
         return content
             .replace(/\n/g, '<br>')
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
             .replace(/\*(.*?)\*/g, '<em>$1</em>');
     }
 
-    // 显示打字指示器
+    // Show typing indicator
     showTypingIndicator() {
         const existingIndicator = this.messageContainer.querySelector('.bella-typing-indicator');
         if (existingIndicator) return;
@@ -371,13 +375,13 @@ class ChatInterface {
         this.messageContainer.appendChild(typingElement);
         this.scrollToBottom();
         
-        // 添加显示动画
+        // Add show animation
         setTimeout(() => {
             typingElement.classList.add('bella-typing-show');
         }, 10);
     }
 
-    // 隐藏打字指示器
+    // Hide typing indicator
     hideTypingIndicator() {
         const indicator = this.messageContainer.querySelector('.bella-typing-indicator');
         if (indicator) {
@@ -385,27 +389,27 @@ class ChatInterface {
         }
     }
 
-    // 清除所有消息
+    // Clear all messages
     clearMessages() {
         this.messageContainer.innerHTML = '';
         this.messages = [];
         this.addWelcomeMessage();
     }
 
-    // 滚动到底部
+    // Scroll to bottom
     scrollToBottom() {
         setTimeout(() => {
             this.messageContainer.scrollTop = this.messageContainer.scrollHeight;
         }, 10);
     }
 
-    // 调整输入框高度
+    // Adjust input height
     adjustInputHeight() {
         this.messageInput.style.height = 'auto';
         this.messageInput.style.height = Math.min(this.messageInput.scrollHeight, 120) + 'px';
     }
 
-    // 显示通知
+    // Show notification
     showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         notification.className = `bella-notification bella-notification-${type}`;
@@ -425,17 +429,17 @@ class ChatInterface {
         }, 3000);
     }
 
-    // 检查聊天窗口是否可见
+    // Check if chat window is visible
     getVisibility() {
         return this.isVisible;
     }
 
-    // 设置回调函数
+    // Set callback functions
     onMessageSend = null;
     onProviderChange = null;
     onAPIKeySave = null;
     onClearHistory = null;
 }
 
-// ES6模块导出
+// ES6 module export
 export { ChatInterface };

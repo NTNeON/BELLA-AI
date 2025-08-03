@@ -1,4 +1,4 @@
-/* --- 加载屏幕 --- */
+/* --- Loading screen --- */
 #loading-screen {
     position: fixed;
     top: 0;
@@ -14,7 +14,7 @@
 }
 
 #loading-screen img {
-    width: 150px; /* 或者您希望的任何尺寸 */
+    width: 150px; /* or any size you prefer */
     height: auto;
     animation: pulse-loader 2s infinite;
 }
@@ -35,7 +35,7 @@
 }
 
 
-/* --- 基本重置和全局样式 --- */
+/* --- Basic reset and global styles --- */
 * {
     margin: 0;
     padding: 0;
@@ -46,10 +46,10 @@ html, body {
     height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     color: white;
-    overflow: hidden; /* 防止视频导致滚动条 */
+    overflow: hidden; /* Prevent scrollbars caused by video */
 }
 
-/* --- 视频背景 --- */
+/* --- Video background --- */
 .video-container {
     position: fixed;
     top: 0;
@@ -66,30 +66,30 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain; /* 保持视频比例，留出黑边 */
+    object-fit: contain; /* Maintain video aspect ratio with black bars */
     opacity: 0;
-    transition: opacity 0.2s ease-in-out; /* 交叉淡入淡出动画 */
+    transition: opacity 0.2s ease-in-out; /* Cross-fade animation */
 }
 
 .bg-video.active {
     opacity: 1;
 }
 
-/* --- 内容覆盖层 --- */
+/* --- Content overlay --- */
 .content-overlay {
     position: relative;
     height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 垂直居中 */
+    justify-content: center; /* Vertical center */
     align-items: center;
     padding: 25px;
     z-index: 1;
-    gap: 40px; /* 在识别结果和按钮之间添加一些间距 */
+    gap: 40px; /* Add spacing between recognition results and buttons */
 }
 
-/* --- 语音识别结果显示 --- */
+/* --- Speech recognition results display --- */
 .transcript-container {
     width: 80%;
     max-width: 600px;
@@ -99,7 +99,7 @@ html, body {
     text-align: center;
     opacity: 0;
     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-    pointer-events: none; /* 默认不响应鼠标事件 */
+    pointer-events: none; /* Don't respond to mouse events by default */
     transform: translateY(20px);
 }
 
@@ -109,13 +109,11 @@ html, body {
 }
 
 #transcript {
-    font-size: 1.5rem; /* 稍大一点的字体 */
+    font-size: 1.5rem; /* Slightly larger font size */
     color: #fff;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-    min-height: 50px; /* 给一个最小高度，防止没内容时跳动 */
+    min-height: 50px; /* Minimum height to prevent jumping when empty */
     line-height: 1.4;
-}
-    transform: scale(1.05);
 }
 
 #sentiment-result {
@@ -126,10 +124,10 @@ html, body {
     text-align: center;
 }
 
-/* 本地语音识别测试区域样式 */
+/* Local speech recognition test area styles */
 .local-asr-container {
     position: fixed;
-    bottom: 150px; /* 调整位置，避免与情感分析区域重叠 */
+    bottom: 150px; /* Adjust position to avoid overlap with sentiment analysis area */
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.7);
@@ -142,7 +140,7 @@ html, body {
 }
 
 #local-mic-button {
-    background-color: #4CAF50; /* 绿色 */
+    background-color: #4CAF50; /* Green */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -178,13 +176,13 @@ html, body {
 
 #local-asr-result {
     font-weight: bold;
-    color: #2196F3; /* 蓝色 */
+    color: #2196F3; /* Blue */
 }
 
-/* --- 悬浮按钮和菜单 --- */
+/* --- Floating button and menu --- */
 #floating-button {
     position: fixed;
-    bottom: 120px; /* 调整位置，使其在麦克风按钮上方 */
+    bottom: 120px; /* Adjust position to be above microphone button */
     right: 30px;
     width: 60px;
     height: 60px;
@@ -214,7 +212,7 @@ html, body {
 
 #menu-container {
     position: fixed;
-    bottom: 200px; /* 调整位置，使其在悬浮按钮上方 */
+    bottom: 200px; /* Adjust position to be above floating button */
     right: 30px;
     width: 150px;
     background: rgba(0, 0, 0, 0.7);
@@ -253,14 +251,14 @@ html, body {
 }
 
 
-/* --- 底部内容 --- */
+/* --- Bottom content --- */
 .bottom-bar {
     width: 100%;
     display: flex;
-    flex-direction: column; /* 垂直排列 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
-    position: relative; /* 为链接定位 */
+    flex-direction: column; /* Vertical arrangement */
+    justify-content: center; /* Horizontal center */
+    align-items: center; /* Vertical center */
+    position: relative; /* For link positioning */
 }
 
 .mic-button {
@@ -294,7 +292,7 @@ html, body {
     color: white;
 }
 
-/* 麦克风 "监听中" 的动画效果 */
+/* Microphone "listening" animation effect */
 .mic-button.is-listening {
     animation: pulse 1.5s infinite;
 }
@@ -312,7 +310,7 @@ html, body {
 }
 
 .footer-credit {
-    margin-top: 20px; /* 与麦克风按钮的间距 */
+    margin-top: 20px; /* Spacing from microphone button */
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
     font-size: 1rem;
@@ -324,17 +322,17 @@ html, body {
     text-decoration: underline;
 }
 
-/* --- 聊天控制面板 --- */
+/* --- Chat control panel --- */
 .chat-control-panel {
     position: fixed;
     top: 30px;
     left: 30px;
     display: flex;
     gap: 15px;
-    z-index: 1002; /* 确保在所有元素之上 */
+    z-index: 1002; /* Ensure above all elements */
     opacity: 0;
     transform: translateY(-20px);
-    transition: opacity 0.8s ease 2s, transform 0.8s ease 2s; /* 延迟2秒显示 */
+    transition: opacity 0.8s ease 2s, transform 0.8s ease 2s; /* Delay 2s before showing */
 }
 
 .chat-control-panel.visible {
@@ -399,7 +397,7 @@ html, body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* --- 响应式设计 --- */
+/* --- Responsive design --- */
 @media (max-width: 600px) {
     .content-overlay {
         padding: 20px;

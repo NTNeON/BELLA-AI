@@ -6,20 +6,20 @@
     <title>Bella - Your AI Companion</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="chatStyles.css">
-    <!-- 引入 Font Awesome 图标库，用于麦克风图标 -->
+    <!-- Font Awesome icon library for microphone icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <!-- 加载屏幕 -->
+    <!-- Loading screen -->
     <div id="loading-screen">
         <img src="Bellaicon/Generated image.webp" alt="Loading Bella...">
     </div>
 
-    <!-- 视频背景 -->
+    <!-- Video background -->
     <div class="video-container">
         <video autoplay muted class="bg-video active" id="video1">
-            <source src="视频资源/3D 建模图片制作.mp4" type="video/mp4">
+            <source src="video-resources/3d-modeling-creation.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <video muted class="bg-video" id="video2">
@@ -28,30 +28,30 @@
         </video>
     </div>
 
-    <!-- 内容层，覆盖在视频之上 -->
+    <!-- Content layer, overlaid on video -->
     <div class="content-overlay">
 
-        <!-- 语音识别结果显示区域 -->
+        <!-- Speech recognition result display area -->
         <div class="transcript-container">
             <p id="transcript"></p>
         </div>
 
-        <!-- 底部麦克风和链接 -->
+        <!-- Bottom microphone and links -->
         <footer class="bottom-bar">
             <button class="mic-button" id="mic-button" aria-label="Start Listening">
                 <i class="fas fa-microphone"></i>
             </button>
         </footer>
 
-        <!-- 聊天控制面板 -->
+        <!-- Chat control panel -->
         <div class="chat-control-panel">
             <button id="chat-toggle-btn" class="control-btn primary">
                 <i class="fas fa-comments"></i>
-                <span>聊天</span>
+                <span>Chat</span>
             </button>
             <button id="chat-test-btn" class="control-btn secondary">
                 <i class="fas fa-paper-plane"></i>
-                <span>测试</span>
+                <span>Test</span>
             </button>
         </div>
 
