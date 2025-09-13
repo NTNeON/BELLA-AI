@@ -18,7 +18,7 @@
 ### One-Click Launch
 ```bash
 # Clone the project
-git clone https://github.com/Rakshitk2223/BELLA-AI.git
+git clone https://github.com/NTNeON/BELLA-AI.git
 cd BELLA-AI
 
 # Install dependencies
